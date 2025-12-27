@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Multi-Tenant Auth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="dashboard-card">
+      <div class="dashboard-header">
+        <h1>User Dashboard</h1>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+      </div>
+
+      <div id="message" class="message"></div>
+
+      <div id="userInfo" class="user-info">
+        <div class="loading">Loading user information...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    // Load user info on page load
+    window.addEventListener('DOMContentLoaded', loadUserInfo);
+    
+    // Logout handler
+    document.getElementById('logoutBtn').addEventListener('click', handleLogout);
+  </script>
+</body>
+</html>
